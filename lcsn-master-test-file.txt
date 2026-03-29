@@ -1,0 +1,248 @@
+Writing Sample 1:
+‘Notice: The 8th Walpurgis Night Mission Issue Fixed
+Hello, this is Project Moon.
+
+Following the Mar. 19th, 2026 Scheduled Update, we identified an issue in the 8th Walpurgis Night where a certain mission was not being counted properly, preventing players from claiming rewards.
+
+This issue has now been resolved and deployed to the server.
+Please refer to the details below for more information.
+
+[ Issue Details ]
+- Following the Mar. 19th Scheduled Update, a mission under the "Hard" Difficulty in the 8th Walpurgis Night mission list was not counted properly, making it impossible to obtain its reward.
+※ Affected mission: Complete all Missions in both Easy and Hard Difficulties
+
+[ Cause of the Issue ]
+- The mission's end date was incorrectly set during validation process, preventing mission progress even when all conditions were met.
+
+[ Fix Details ]
+- Corrected the valid period for the mission "Complete all Missions in both Easy and Hard Difficulties"
+- Improved and deployed server logic to ensure mission progress is properly reflected
+
+[ Fix Schedule ]
+- Fix applied on Mar. 20th (Fri), 21:50 (KST)
+
+※ The fix has been automatically applied as of Mar. 20th, 21:50. No additional update is required.
+
+※ After the time listed above, mission progress will now be properly counted. We have confirmed that rewards can now be claimed.
+For Managers who were unable to complete the mission due to this issue, please fully restart the game and reconnect.
+
+We sincerely apologize for the inconvenience.’
+
+
+
+Writing Sample 2:
+‘2026, Mar. 26th Scheduled Update Notice
+---------------------------------------
+
+Greetings, Dear Manager.
+
+The server will enter scheduled maintenance from 10:00 [AM] through 12:00 [PM] on Mar. 26th, 2026 (KST).
+
+Please make note of the maintenance schedule; we recommend that you refrain from entering combat or making in-app purchases and close the application before maintenance begins so that no data is lost.
+
+Please refer below for details about the update.
+
+New Content
+-----------
+
+1. Mirror of Names and Spiders - Mirror Projection / Achievements Part 2 will be updated.
+
+2. Voices will be added to The 4th Walpurgis Night & The 5th Walpurgis Nights Mini Episodes.
+
+3. Façade Projection System implementation will be improved.
+- Skill-triggered voice playback frequency will be adjusted.
+
+※ Please understand that the update to address the "Unnatural Skill motion display due to differences in each Identity's number of Skills" issue, which was previously announced to be deployed with the Mar. 26th Scheduled Update, will be updated on Apr. 2nd instead, as it requires further stability testing.
+
+4. New Dante's Notes entries will be added.
+New entries will be added to Dante's Notes after the Mar. 26th (KST) Scheduled Update.
+► Unlock Conditions: Clear Main Story Canto 9
+
+Mirror of Names and Spiders Quality-of-Life Updates
+---------------------------------------------------
+
+With the Mar. 26th Scheduled Update, the following QoL features will be deployed to Mirror of Names and Spiders.
+
+► Mirror Dungeon "Theme Pack Compendium" will now list information regarding each Theme Pack's featured Floors.
+- Theme Pack information from the "Theme Pack Compendium" will now contain their featured Floors.
+- Floor-based search filter will be added to the "Theme Pack Compendium", allowing users to view which Floor has which Theme Packs.
+
+► Featured bosses' portraits can now be previewed in the Mirror Dungeon "Select Floor Theme Pack" menu.
+- Select the magnifier icon on the top right corner of each Theme Pack to view the portraits of featured bosses.
+- Featured boss preview for Theme Packs is unlocked only after selecting the said Theme Pack at least once.
+
+► (STEAM) Keyboard input for Mirror Dungeon Stage selection is now available.
+- Press the Up, Right, or Down directional keys to select the next node.
+If you haven't yet entered the selected node, you can press the Left directional key to cancel your selection and return to the previous node.
+- After selecting a node, press Enter or Space Bar to enter the selected node.
+- In the Choice Event menu, press Enter or Space Bar to proceed to the next paragraph.
+- Please view "Settings" - "PC Keyboard Shortcuts" in the game for more information.
+※ Any keyboard controls for various functions not included in the Mar. 26th Scheduled Update, such as Choice Events or Hidden Boss entry, will be updated at a later date.
+
+► Certain functionalities will be improved for the ease of viewing your currently owned E.G.O Gifts in the Mirror Dungeon.
+- A total of 4 categories have been added for the sake of viewing more information, in addition to your currently owned E.G.O Gifts.
+
+1. Owned: View all E.G.O Gifts you have obtained during the current Mirror Dungeon run.
+
+2. Clear Rewards: View the list of E.G.O Gift rewards that become selectable upon clearing the Theme Pack.
+- Any E.G.O Gifts exclusive to your current Theme Pack will be listed under the "Theme Pack-Exclusive" section.
+
+3. Current Theme Pack-Exclusive: View the list of E.G.O Gifts exclusive to your current Theme Pack (both normal and Fusion).
+
+4. Featured: View the list of all obtainable E.G.O Gifts in your current Theme Pack.
+
+Bug Fixes & Improvements
+------------------------
+
+► (EN only) Fixed typo of LCE E.G.O::AEDD Gregor's Uptie IV Skill 1
+- Before : [On Use] At less than 10 Charge, gain +2 Charge Count
+- After : [On Use] At less than 10 Charge Count, gain +2 Charge Count
+※ The effect is behaving per the "After" text. Only the English version of the text will be fixed.
+
+► Fixed an issue where Identities with the "Attack Power Up" effect were incorrectly treated as "Charge" Identities and received related effects
+[ Cause of the Issue ]
+- This issue occurred because a keyword from a deleted Unique Charge code, which was removed due to a design change, was replaced with "Power Up".
+
+[ Issue Fix ]
+Adjusted the code so that data with invalid keywords is properly recognized as invalid
+
+[ Affected Identities (10 total) ]
+LCB Sinner Don Quixote, Seven Assoc. South Section 6 Ryōshū, The Lord of Hongyuan Hong Lu, LCB Sinner Heathcliff, Jeong's Office Rep Ishmael, The Princess of La Manchaland Rodion, LCB Sinner Sinclair, Blade Lineage Salsu Sinclair, G Corp. Head Manager Outis, Liu Assoc. South Section 6 Gregor
+
+► Fixed an issue where the game would not respond when certain Heishou Identities under Façade Projection use Heishou follow-up attacks
+※ Affected Identities: Heishou Pack - Wu Branch Adept Yi Sang (when equipped with N Corp. E.G.O::Fell Bullet Yi Sang's Façade), Heishou Pack - You Branch Adept Heathcliff (when equipped with Full-Stop Office Fixer Heathcliff's Façade)
+
+► Fixed an issue where battles would not proceed when entering the tutorial stage with "Dawn Office Fixer Sinclair" in the team loadout
+
+► Fixed an issue where some voice lines would not play when "Dawn Office Fixer Sinclair" uses Skill 3
+
+► Fixed an issue where the description of the Passive "Unwithering Flower" did not display at Uptie Tier IV for "Lobotomy E.G.O::Faint Aroma & Solitude Ryōshū"
+
+► Fixed an issue where the E.G.O Gift "Uniform - Liu Assoc." effect would activate even when the team loadout prerequisite is not met
+[ Cause of the Issue ]
+The requirement check logic for team loadout was missing, and the issue was not properly flagged during cross-checking.
+
+[ Issue Fix ]
+Updated the logic so that the effect only activates when team loadout requirements are met
+
+► Fixed an issue where certain Coin motions and special dialogue for a Skill used by an enemy in Main Story 8-30 were partially missing
+
+► Fixed an issue where a Skill used by an enemy in Main Story 9-44 functioned differently from intended
+- Before: Coin 4 Effect - [On Hit] Inflict 10 Burn
+- After: Coin 4 Effect - [On Hit without Cracking] Inflict 10 Burn
+※ To align with our Managers' gameplay experience, the textual description has been updated to match the actual behavior.
+
+► Fixed a text error in the Skill "Conduct Analysis" used by a boss unit in LCB Regular Check-up BokGak
+- Before: [On Use] At 10+ Poise Potency, consume Poise Potency to gain +2 Final Power for every 3 Poise Potency consumed (max 4)
+- After: [On Use] At 10+ Poise Potency, consume Poise Potency to gain +2 Final Power for every 3 Poise Potency consumed (max 4). Consume 3 additional Poise for every Final Power gained due to this effect
+※ The effect is behaving as intended; only the text will be fixed.
+
+► Fixed an issue where, when "The Lord of Hongyuan Hong Lu" uses a Heishou follow-up Skill, the dedicated follow-up attack animation would display even when the follow-up unit is equipping a Façade
+
+► Fixed an issue where certain motions would not display when the Façade of "Shi Assoc. East Section 3 Faust" is projected onto another Identity
+
+► Fixed an issue where the illustration position of "Los Mariachis Jefe Sinclair" would appear incorrectly on the Façade Projection screen
+
+► Fixed an issue where the Keyword icon of the Passive "Hunger" would display incorrectly for a boss unit in the Mirror Dungeon Theme Pack "Into a Certain Library's Book"
+
+► (EN only) Adjusted the translation for an activation timing for phrasing consistency
+- Before : After Current Coin Attack
+- After : Current Coin Attack End
+
+► Fixed an issue where the background image of the text for activated Passives would display abnormally in the Skill Info UI during combat
+
+► Fixed an issue where a red dot notification would appear on the 3rd Anniversary Nominable Identity Ticket's UI
+
+► Fixed an issue where the topmost UI image would not display when progressing through the Refraction Railway with the Dark Mode UI
+
+► Fixed an issue where certain keyword sound effects would play even when the sound effects setting is turned OFF
+
+► Applied auto-scroll feature to Team Loadout name and title texts in the Team Loadout screen
+
+► Improved visuals so that when projecting a Façade in the Team Loadout screen, illustrations of projected Identities would display periodically instead of displaying only once
+
+► Improved Façade Projection list so that illustrations display according to the Identity's Uptie Tier
+
+► Fixed an issue where certain areas in the Identity/E.G.O list on the Team Loadout screen could not be interacted with
+
+► Removed certain effects displayed on Sinners during cutscenes in Chapter 7's boss battle
+※ Additional effects that appear under certain situations will be fixed in the next update.
+
+► Fixed an issue where, under certain conditions, Combat SD may linger in Stage 7.5-11
+
+Maintenance & Application Update Compensation
+---------------------------------------------
+
+- Content : Lunacy x300
+- Recipients : All users whose game accounts were created before Apr. 2nd, 2026, 10:00 AM (KST)
+- When : After Mar. 26th (Thu.), 2026, 12:00 (KST)
+- Can be claimed once per account
+
+Maintenance Compensation can be claimed until Apr. 2nd (Thu.), 2026, 10:00 (KST) via the in-game Mailbox. (Mail available for 7 days)
+
+Notes
+-----
+
+- Please update your game client to the newest version on the respective store (Google Play/App Store/Steam).
+- Forcibly shutting down the game while it is downloading resources may cause the download to fail, so please be careful not to close the application during the download.
+- You will not be able to play <Limbus Company> during maintenance. Please understand.
+- The maintenance schedule may suddenly change depending on the status of maintenance. If such a change occurs, we will let you know in a follow-up notice.
+- A resource download may be prompted after the build update. If you're using a mobile device, it is recommended to proceed with a Wi-Fi connection.
+- If you're playing with a guest account, we recommend that you link your account with other platforms to prevent possible account loss.
+- The maintenance compensation will be provided once per account. Please note that the distribution may be slow due to network delays or other causes.
+- The update gifts are valid to claim for 7 days. Please redeem them within this timeframe.
+
+Thank you.’
+
+Writing Sample 3:
+'Notice: Ver. 1.101.1 Known Issues and Hotfix ETA
+Hello, this is Project Moon.
+
+We would like to inform you about the known issues identified after the Mar. 26th, 2026 Scheduled Update, and the ETA for a Hotfix that addresses some of them.
+
+Please continue reading for more information.
+
+[ Issues to be fixed with the Mar. 27th Hotfix ]
+
+▶ An Issue where, under specific circumstances, completion of certain 'Mirror Projection / Achievement - Loadout' Achievements are abnormally affected
+
+※ Affected Achievements (9 total)
+1. Defeat the 4 'Charm, Wander, Doubt,' 'Textbook,' 'Blade and Artwork,' and 'The Unsevering' Theme Pack bosses with 3 or more The House of Spiders Identities, with 'LCB Sinner Ryōshū', in your Loadout (Not counting Backup Units; incompletable by Rental Teams)
+2. Defeat the 'The Heartbreaking' Theme Pack boss with 3 or more Wuthering Heights Identities, including 'Wild Hunt Heathcliff', in your Loadout (Not counting Backup Units; incompletable by Rental Teams)
+3. Defeat the 'The Infinite Procession' Theme Pack boss with 'Cinq West Section 3 Meursault,' 'Zwei West Section 3 Sinclair,' 'Fanghunt Office Fixer Hong Lu,' and 'Firefist Office Survivor Gregor' Identities in your Loadout (Not counting Backup Units; incompletable by Rental Teams)
+4. Defeat the 'Murder on the WARP Express BokGak' Theme Pack boss with 4 or more Bloodfiend Identities in your Loadout (Not counting Backup Units; incompletable by Rental Teams)
+5. Defeat the 'The Unconfronting' Theme Pack boss with 2 or more Mechanical Amalgam Identities in your Loadout (Not counting Backup Units; incompletable by Rental Teams)
+6. Defeat the 'Miracle in District 20 BokGak' Theme Pack boss with only Heathcliff and Don Quixote Identities on the field (Not counting Backup Units; incompletable by Rental Teams)
+7. Defeat the 'Timekilling Time BokGak' Theme Pack boss with 2 or more T Corp. Identities in your Loadout (Not counting Backup Units; incompletable by Rental Teams)
+8. Defeat the 'A Beautiful Voice' Theme Pack boss with 'Wild Hunt Heathcliff' Identity on the field (Not counting Backup Units; incompletable by Rental Teams)
+9. Defeat the 5 'Murder on the WARP Express,' 'Murder on the WARP Express BokGak,' 'La Manchaland Re-opening,' 'The Infinite Procession,' and 'The Dream Ending' Theme Pack bosses with 'The Manager of La Manchaland Don Quixote' Identity on the field (Not counting Backup Units; incompletable by Rental Teams)
+
+( Issue Details )
+- This issue can be caused by forfeiting immediately after entering the Boss Encounter, then re-entering with a different Team loadout
+1. Even after re-entering with a different loadout, because the game reads the previous Team loadout instead, Achievements that should be (or shouldn't be) completable with the current loadout are not completed (or completed)
+2. Loadout Achievements with "Not counting Backup Units" condition count Backup Units for the purpose of completing them
+
+( Issue Cause )
+- When re-entering an Encounter after forfeiting it, the in-game data used for Achievement tracking does not properly update with the user's current Team loadout, causing this issue to occur.
+
+( Issue Solution )
+- Additional code was inserted to update the in-game data used for Achievement tracking. This solution will be deployed via a hotfix.
+
+
+[ Hotfix ETA ]
+- 3.27(Fri) 16:00(KST)
+- There may be a 10 minute delay.
+
+※ The Hotfix will be deployed upon restarting the game, and does not require a separate client update. However, please note that additional in-game downloads may occur.
+
+
+[ Issues to be resolved with a Scheduled Update ]
+
+▶ An issue where certain Encounters are missing BGM and connected lyrics
+
+▶ An issue where the Mirror Dungeon EXTREME Theme Pack 'Bridle of Infinity' enemy unit's "Surgery" Keyword does not work
+
+※ The above issues will be resolved with the April 2nd Scheduled Update.
+
+
+We sincerely apologize for the inconvenience.'

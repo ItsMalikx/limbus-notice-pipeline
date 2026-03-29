@@ -1,0 +1,125 @@
+Limbus Company
+News
+Posted
+Fri, March 27
+2026.04.02 (KST) New Identity Target Extraction
+
+
+2,191
+Rate Up
+96
+Discuss
+Share
+
+News
+Posted
+Fri, March 27
+Notice: Ver. 1.101.1 Known Issues and Hotfix ETA
+Hello, this is Project Moon.
+
+We would like to inform you about the known issues identified after the Mar. 26th, 2026 Scheduled Update, and the ETA for a Hotfix that addresses some of them.
+
+Please continue reading for more information.
+
+[ Issues to be fixed with the Mar. 27th Hotfix ]
+
+▶ An Issue where, under specific circumstances, completion of certain 'Mirror Projection / Achievement - Loadout' Achievements are abnormally affected
+
+※ Affected Achievements (9 total)
+1. Defeat the 4 'Charm, Wander, Doubt,' 'Textbook,' 'Blade and Artwork,' and 'The Unsevering' Theme Pack bosses with 3 or more The House of Spiders Identities, with 'LCB Sinner Ryōshū', in your Loadout (Not counting Backup Units; incompletable by Rental Teams)
+2. Defeat the 'The Heartbreaking' Theme Pack boss with 3 or more Wuthering Heights Identities, including 'Wild Hunt Heathcliff', in your Loadout (Not counting Backup Units; incompletable by Rental Teams)
+3. Defeat the 'The Infinite Procession' Theme Pack boss with 'Cinq West Section 3 Meursault,' 'Zwei West Section 3 Sinclair,' 'Fanghunt Office Fixer Hong Lu,' and 'Firefist Office Survivor Gregor' Identities in your Loadout (Not counting Backup Units; incompletable by Rental Teams)
+4. Defeat the 'Murder on the WARP Express BokGak' Theme Pack boss with 4 or more Bloodfiend Identities in your Loadout (Not counting Backup Units; incompletable by Rental Teams)
+5. Defeat the 'The Unconfronting' Theme Pack boss with 2 or more Mechanical Amalgam Identities in your Loadout (Not counting Backup Units; incompletable by Rental Teams)
+6. Defeat the 'Miracle in District 20 BokGak' Theme Pack boss with only Heathcliff and Don Quixote Identities on the field (Not counting Backup Units; incompletable by Rental Teams)
+7. Defeat the 'Timekilling Time BokGak' Theme Pack boss with 2 or more T Corp. Identities in your Loadout (Not counting Backup Units; incompletable by Rental Teams)
+8. Defeat the 'A Beautiful Voice' Theme Pack boss with 'Wild Hunt Heathcliff' Identity on the field (Not counting Backup Units; incompletable by Rental Teams)
+9. Defeat the 5 'Murder on the WARP Express,' 'Murder on the WARP Express BokGak,' 'La Manchaland Re-opening,' 'The Infinite Procession,' and 'The Dream Ending' Theme Pack bosses with 'The Manager of La Manchaland Don Quixote' Identity on the field (Not counting Backup Units; incompletable by Rental Teams)
+
+( Issue Details )
+- This issue can be caused by forfeiting immediately after entering the Boss Encounter, then re-entering with a different Team loadout
+1. Even after re-entering with a different loadout, because the game reads the previous Team loadout instead, Achievements that should be (or shouldn't be) completable with the current loadout are not completed (or completed)
+2. Loadout Achievements with "Not counting Backup Units" condition count Backup Units for the purpose of completing them
+
+( Issue Cause )
+- When re-entering an Encounter after forfeiting it, the in-game data used for Achievement tracking does not properly update with the user's current Team loadout, causing this issue to occur.
+
+( Issue Solution )
+- Additional code was inserted to update the in-game data used for Achievement tracking. This solution will be deployed via a hotfix.
+
+
+[ Hotfix ETA ]
+- 3.27(Fri) 16:00(KST)
+- There may be a 10 minute delay.
+
+※ The Hotfix will be deployed upon restarting the game, and does not require a separate client update. However, please note that additional in-game downloads may occur.
+
+
+[ Issues to be resolved with a Scheduled Update ]
+
+▶ An issue where certain Encounters are missing BGM and connected lyrics
+
+▶ An issue where the Mirror Dungeon EXTREME Theme Pack 'Bridle of Infinity' enemy unit's "Surgery" Keyword does not work
+
+※ The above issues will be resolved with the April 2nd Scheduled Update.
+
+
+We sincerely apologize for the inconvenience.
+226
+Rate Up
+8
+Discuss
+Share
+
+Regular Update
+Posted
+Wed, March 25
+2026, Mar. 26th Scheduled Update Notice
+
+
+
+
+
+
+520
+Rate Up
+24
+Discuss
+Share
+
+News
+Posted
+Fri, March 20
+Notice: The 8th Walpurgis Night Mission Issue Fixed
+Hello, this is Project Moon.
+
+Following the Mar. 19th, 2026 Scheduled Update, we identified an issue in the 8th Walpurgis Night where a certain mission was not being counted properly, preventing players from claiming rewards.
+
+This issue has now been resolved and deployed to the server.
+Please refer to the details below for more information.
+
+[ Issue Details ]
+- Following the Mar. 19th Scheduled Update, a mission under the "Hard" Difficulty in the 8th Walpurgis Night mission list was not counted properly, making it impossible to obtain its reward.
+※ Affected mission: Complete all Missions in both Easy and Hard Difficulties
+
+[ Cause of the Issue ]
+- The mission's end date was incorrectly set during validation process, preventing mission progress even when all conditions were met.
+
+[ Fix Details ]
+- Corrected the valid period for the mission "Complete all Missions in both Easy and Hard Difficulties"
+- Improved and deployed server logic to ensure mission progress is properly reflected
+
+[ Fix Schedule ]
+- Fix applied on Mar. 20th (Fri), 21:50 (KST)
+
+※ The fix has been automatically applied as of Mar. 20th, 21:50. No additional update is required.
+
+※ After the time listed above, mission progress will now be properly counted. We have confirmed that rewards can now be claimed.
+For Managers who were unable to complete the mission due to this issue, please fully restart the game and reconnect.
+
+We sincerely apologize for the inconvenience.
+140
+Rate Up
+8
+Discuss
+Share
