@@ -83,7 +83,7 @@ int main(int argc, char *argv[]) {
 
         char *body = strchr(notices[i].content, ':');
         if (!body) body = notices[i].content;
-        else body++; // skip colon
+        else body++;
 
         fprintf(out, "Writing Sample %d:%s", new_label, body);
 
