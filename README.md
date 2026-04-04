@@ -81,8 +81,7 @@ A `Makefile` automates the entire workflow.
 | --------------- | --------------------------------------------------------------------------- |
 | `make` or `make all` | Runs the full pipeline: compile, sort, generate JSON, sitemap, and deploy.  |
 | `make scan`     | Runs the `scan_edge_cases.py` utility to check for potential mismatches.      |
-| `make deploy`   | Copies the final `notices.json` and `sitemap.xml` to the website repository.|
-| `make clean`    | Removes all generated files (`.txt`, `.tsv`, `.json`, `.xml`, C binary).      |
+| `make deploy`   | Copies the final `notices.json` and `sitemap.xml` to the website repository.|  |
 
 ### Manual Workflow
 1.  `(Optional)` Run `make scan` to identify any new edge cases. Add them to `manual_overrides.csv`.
