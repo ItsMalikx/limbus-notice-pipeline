@@ -1,27 +1,21 @@
 # Limbus Notice Pipeline
 
-A C/Python toolchain for processing, chronologically sorting, and structuring official Limbus Company game notices into a clean, searchable dataset.
+A C/Python toolchain I built to process, chronologically sort, and structure official Limbus Company game notices into a clean, searchable dataset.
 
-This pipeline powers the [Limbus Company News Archive](https://lcna.whosmalikx.com).
+This pipeline powers my Limbus Company News Archive: [lcna.whosmalikx.com](https://lcna.whosmalikx.com)
 
-## Status
+## How It Works
 
-This project is actively used and maintained as part of a live archive workflow. The pipeline is stable and robust, designed to handle inconsistent source data and evolving requirements.
+This pipeline processes a master text file of Limbus Company notices, which are often transcribed via AI OCR and lack reliable date metadata. It intelligently matches them against official Steam announcements to reconstruct the correct chronological order and exports structured data for web deployment.
 
-## Overview
-
-The pipeline ingests a master text file of Limbus Company notices (transcribed via AI OCR), intelligently matches them against official Steam announcements, and exports structured data for web deployment. It is designed to be resilient against non-standard notice formats, title discrepancies, and other "edge cases" common in raw text processing.
-
-Core functionality includes:
-- **Chronological Reconstruction:** Uses Steam metadata to accurately sort notices, even when dates are missing from the source text.
-- **Sidecar Metadata:** Decouples date information from the source text, generating a clean `.tsv` file for a more robust and maintainable data flow.
-- **Manual Override System:** Implements an industry-standard lookup table (`manual_overrides.csv`) to forcefully correct relationships for irregular or problematic notices.
-- **Edge-Case Scanning:** Includes a dedicated utility to proactively find and flag potential mismatches, simplifying data maintenance.
-- **Structured Data Generation:** Produces clean JSON for the web front-end and an XML sitemap for search engine optimization.
+To handle inconsistencies in the source data, I implemented a few key features:
+-   **Sidecar Metadata:** Instead of embedding dates into the text, the C sorter generates a clean `.tsv` file. This decouples the content from its metadata, creating a more robust and maintainable data flow.
+-   **Manual Override System:** For irregular notices with mismatched titles, I use a simple CSV lookup table (`manual_overrides.csv`) to forcefully create the correct relationship, bypassing the automated matching logic.
+-   **Edge-Case Scanning:** I wrote a dedicated Python utility that proactively scans for potential mismatches between the master file and the Steam list, making it easy to spot and fix errors.
 
 ## The Pipeline
 
-The data flows through a multi-stage process, separating sorting logic from data generation.
+The data flows through a multi-stage process, separating the complex sorting logic from the final data generation.
 
 ```
 lcsn-MASTER.txt + full_steamlist.txt + manual_overrides.csv
@@ -44,61 +38,51 @@ z_Output/notices.json ───────> generate_sitemap.py ───> z_Ou
 ## Components
 
 ### Core Pipeline
-*   **`lc-steam-news-sorter.c`**: The primary C-based sorting and dating engine.
-    - Matches notices against Steam posts using a scored substring algorithm to find the best fit.
-    - Reads `manual_overrides.csv` to bypass the fuzzy matcher and enforce specific pairings.
-    - Extracts official dates from Steam metadata, falling back to in-text parsing only when necessary.
-    - **Outputs:**
-        - `lcsn-sorted_notices.txt`: The master text, chronologically sorted and cleanly formatted.
-        - `lcsn-dates.tsv`: A simple "sidecar" file mapping the new notice ID to its correct date (`ID \t YYYY-MM-DD`).
+*   **`lc-steam-news-sorter.c`**: This is the primary C-based sorting and dating engine. It matches notices to Steam posts, reads manual overrides, extracts dates, and outputs two key files:
+    - `lcsn-sorted_notices.txt`: The master text, sorted chronologically and cleanly formatted.
+    - `lcsn-dates.tsv`: A sidecar file mapping each new notice ID to its correct date (`ID \t YYYY-MM-DD`).
 
-*   **`txt_to_json.py`**: Converts the processed text and date files into structured JSON.
-    - Reads `lcsn-sorted_notices.txt` for content and `lcsn-dates.tsv` for dates.
-    - Merges the two data sources, extracts titles, assigns keyword tags, and formats the content.
-    - **Output:** `z_Output/notices.json`.
+*   **`txt_to_json.py`**: This Python script converts the processed text and date files into structured JSON for my website. It reads both the `.txt` and `.tsv`, merges them, extracts titles, assigns tags, and formats the content.
 
-*   **`generate_sitemap.py`**: Generates a sitemap from the final JSON for SEO.
-    - Reads `notices.json` and creates an XML entry for each notice.
-    - **Output:** `z_Output/sitemap.xml`.
+*   **`generate_sitemap.py`**: This script generates an XML sitemap from the final `notices.json` file to improve search engine optimization for the archive.
 
 ### Utility & Maintenance Scripts
-*   **`scan_edge_cases.py`**: A maintenance utility to ensure data quality.
-    - Compares titles in the master text against the Steam list using string similarity metrics.
-    - Identifies notices with low matching confidence that may need a manual override.
-    - Generates a report with suggested `^¬^` override entries to copy-paste.
+*   **`scan_edge_cases.py`**: A maintenance script I run to ensure data quality. It compares titles in my master text against the Steam list and flags any with low matching confidence that might need a manual override.
 
-*   **`z_split_notices_for_google_docs.c`**: A simple utility to split the final sorted archive into smaller `.txt` chunks for backup and external storage (e.g., Google Docs).
+*   **`z_split_notices_for_google_docs.c`**: A simple utility to split the final sorted archive into smaller `.txt` chunks for backup on Google Docs.
 
-*   **`reverse_notices_oldest-to-newest.c`**: A utility for reversing the chronological order of a dataset and relabeling from 1 to N, useful for specific data analysis tasks.
+*   **`reverse_notices_oldest-to-newest.c`**: A utility for reversing the chronological order of a dataset, which is useful for certain data analysis tasks.
 
-*   **`word_frequncy_analyzer.py`**: An analysis utility for generating insights from the dataset, such as keyword frequency.
+*   **`word_frequncy_analyzer.py`**: An analysis script for generating insights from the dataset, such as keyword frequency.
 
 ## Usage
 
-A `Makefile` automates the entire workflow.
+I've automated the entire workflow using a `Makefile`.
 
 | Command         | Description                                                                 |
 | --------------- | --------------------------------------------------------------------------- |
-| `make` or `make all` | Runs the full pipeline: compile, sort, generate JSON, sitemap, and deploy.  |
-| `make scan`     | Runs the `scan_edge_cases.py` utility to check for potential mismatches.      |
-| `make deploy`   | Copies the final `notices.json` and `sitemap.xml` to the website repository.|  |
+| `make` or `make all` | Runs the full pipeline: compiles the C code, sorts the data, generates the JSON and sitemap, and deploys the files. |
+| `make scan`     | Runs the `scan_edge_cases.py` utility to help me check for any new mismatches. |
+| `make deploy`   | Manually copies the final `notices.json` and `sitemap.xml` to the website repository.|
 
-### Manual Workflow
-1.  `(Optional)` Run `make scan` to identify any new edge cases. Add them to `manual_overrides.csv`.
-2.  Run `make` to execute the full pipeline. The final files will be generated and copied to your website directory.
+### My Workflow
+1.  First, I update my `lcsn-MASTER.txt` and `full_steamlist.txt` with the latest notices.
+2.  Next, I run `make scan`. If it finds any irregular notices, I add an entry for them in `manual_overrides.csv` to ensure they're matched correctly.
+3.  Finally, I just run `make`. This executes the entire pipeline from start to finish.
+
+The `deploy` step in the `Makefile` is configured for my project. It automatically copies the generated `notices.json` and `sitemap.xml` directly into my website's repository. If you are adapting this pipeline for your own use, you'll want to change the `SITE_DIR` variable at the top of the `Makefile` to point to your project's directory.
 
 ## Data
 
 #### Input Files
-*   **`lcsn-MASTER.txt`**: The master archive of all notices, typically from AI OCR transcription. The order does not matter.
-*   **`full_steamlist.txt`**: A reference dump of all official Steam news posts for date and title metadata.
-*   **`manual_overrides.csv`**: A user-maintained lookup table to force-match irregular notice titles to their correct Steam post.
-    - *Format:* `[Notice Title]^¬^[Unique Snippet from Steam Title]`
+*   **`lcsn-MASTER.txt`**: The master archive of all notices. The order of notices in this file does not matter.
+*   **`full_steamlist.txt`**: A reference dump of all official Steam news posts, used for date and title metadata.
+*   **`manual_overrides.csv`**: My user-maintained lookup table to force-match irregular notices. The format is `[Notice Title]^¬^[Unique Snippet from Steam Title]`.
 
 #### Key Output Files
 *   **`lcsn-sorted_notices.txt`**: The clean, chronologically sorted master text.
 *   **`lcsn-dates.tsv`**: The sidecar file containing notice IDs and their corresponding dates.
-*   **`z_Output/notices.json`**: The final structured dataset for the website.
+*   **`z_Output/notices.json`**: The final structured dataset used by the website.
 *   **`z_Output/sitemap.xml`**: The generated sitemap for search engines.
 
 ## License
